@@ -58,7 +58,7 @@ export class GuiModel {
                     "url": "/todo",
                     "formFieldList": [
                         {
-                            "id":   "title",
+                            "id": "title",
                             "type": "text",
                             "name": { default: "Titel" },
                             "required": true,
@@ -107,6 +107,43 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Motorrad" },
+                            "icon": "fa-motorcycle",
+                            "color": "red",
+                            "page": "motorcyclePage",
+                            "width": 2,
+                        },
+                    ]
+                },
+                {
+                    "id": "motorcyclePage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neues Motorrad zur Garage hinzufügen" },
+                            "icon": "fa-pen",
+                            "color": "red",
+                            "width": 2,
+                            "form": {
+                                "form": "motorcycleForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "name": "Motorrad",
+                            "icon": "fa-motorcycle",
+                            "color": "wet-asphalt",
+                            "search": true,
+                            "url": "/motorcycle",
+                            "form": {
+                                "form": "motorcycleForm"
+                            }
+                        }
                     ]
                 },
                 {
@@ -117,12 +154,12 @@ export class GuiModel {
                         },
                         {
                             "type": "newButton",
-                            "name": { default: "Neues ToDo"},
+                            "name": { default: "Neues ToDo" },
                             "icon": "fa-user",
                             "color": "green",
                             "width": 2,
-                            "form" : {
-                                "form" : "ToDoForm"
+                            "form": {
+                                "form": "ToDoForm"
                             }
                         },
                         {
