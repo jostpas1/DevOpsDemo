@@ -87,7 +87,42 @@ export class GuiModel {
                         }
                     ]
                 },
-            ],
+            {
+                "id": "MotorcycleForm",
+                "title": { default: "Motorrad" },
+                "url": "/motorcycle",
+                "formFieldList": [
+                    {
+                        "id": "title",
+                        "type": "text",
+                        "name": { default: "Titel" },
+                        "required": true,
+                        "width": 2
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "name": { default: "Text" },
+                        "newRow": true,
+                        "maxLength": 4000,
+                        "height": 4,
+                        "width": 2
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            },
+        ],            
             "pageList": [
                 {
                     "id": "mainmenu",
@@ -97,15 +132,6 @@ export class GuiModel {
                             "type": "pageLabel",
                             "value": "<h4>Willkommen bei DevOps</h4>",
                             "newRow": true
-                        },
-                        {
-                            "type": "button",
-                            "name": { default: "ToDo-List" },
-                            "icon": "fa-file-alt",
-                            "color": "wet-asphalt",
-                            "page": "toDoPage",
-                            "width": 2,
-                            "newRow": true,
                         },
                         {
                             "type": "button",
@@ -130,7 +156,7 @@ export class GuiModel {
                             "color": "red",
                             "width": 2,
                             "form": {
-                                "form": "motorcycleForm"
+                                "form": "MotorcycleForm"
                             }
                         },
                         {
@@ -141,7 +167,7 @@ export class GuiModel {
                             "search": true,
                             "url": "/motorcycle",
                             "form": {
-                                "form": "motorcycleForm"
+                                "form": "MotorcycleForm"
                             }
                         }
                     ]
