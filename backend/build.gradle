@@ -40,11 +40,3 @@ jacocoTestReport {
 		xml.destination file("${rootProject.projectDir}/target/site/jacoco/cov.xml")
 	}
 }
-
-sonarqube {
-  properties {
-    property "sonar.projectKey", "jostpas1_DevOpsDemo"
-    property "sonar.organization", "jostpas1"
-    property "sonar.host.url", "https://sonarcloud.io"
-  }
-}
