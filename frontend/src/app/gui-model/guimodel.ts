@@ -36,7 +36,7 @@ export class GuiModel {
                     ]
                 },
                 {
-                    "id": "NotImplementedFormModal"
+                    "id": "NotImplementedFormModal",
                     "title": "NotImplemented",
                     "url": "/dummyform",
                     "formFieldList": [
