@@ -30,14 +30,14 @@ public class MotorcycleController {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-        final String motorcycle_type = "Aufbauart Motorrad";
-        this.motorcycles.put(1,new Motorcycles(1, "Naked", motorcycle_type));
-        this.motorcycles.put(2,new Motorcycles(2, "Crossover", motorcycle_type));
-        this.motorcycles.put(3,new Motorcycles(3, "Enduro", motorcycle_type));
-        this.motorcycles.put(4,new Motorcycles(4, "Sport", motorcycle_type));
-        this.motorcycles.put(5,new Motorcycles(5, "Tourer", motorcycle_type));
+        final String motorcycleType = "Aufbauart Motorrad";
+        this.motorcycles.put(1,new Motorcycles(1, "Naked", motorcycleType));
+        this.motorcycles.put(2,new Motorcycles(2, "Crossover", motorcycleType));
+        this.motorcycles.put(3,new Motorcycles(3, "Enduro", motorcycleType));
+        this.motorcycles.put(4,new Motorcycles(4, "Sport", motorcycleType));
+        this.motorcycles.put(5,new Motorcycles(5, "Tourer", motorcycleType));
         logger.info("Init Data");
-        }
+    }
 
     @GetMapping("/services/motorcycle")
     public List<PathListEntry<Integer>> motorcycle() {
@@ -46,8 +46,8 @@ public class MotorcycleController {
             var entry = new PathListEntry<Integer>();
             entry.setKey(motorcycle.getId(), "motorcycleKey");
             entry.setName(motorcycle.getTitle());
-            entry.getDetails().add(motorcycle.getMotorcycle_type());
-            entry.setTooltip(motorcycle.getMotorcycle_type());
+            entry.getDetails().add(motorcycle.getMotorcycleType());
+            entry.setTooltip(motorcycle.getMotorcycleType());
             result.add(entry);
         }
         return result;
@@ -75,5 +75,4 @@ public class MotorcycleController {
     public Motorcycles deleteMotorcycle(@PathVariable Integer id) {
         return this.motorcycles.remove(id);
     }
-
 }

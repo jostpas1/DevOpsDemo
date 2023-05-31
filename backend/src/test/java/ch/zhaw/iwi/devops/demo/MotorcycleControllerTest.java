@@ -8,7 +8,7 @@ public class MotorcycleControllerTest {
     public void testCreate() {
         MotorcycleController controller = new MotorcycleController();
         Motorcycles newMotorcycle = new Motorcycles(1, "Test Motorcycle", "Test Type");
-        controller.createMotorcycle(1, newMotorcycle);
+        controller.createMotorcycle(newMotorcycle);
         assertEquals(1, controller.motorcycle().size());
     }
 }
