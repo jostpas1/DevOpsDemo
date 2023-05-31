@@ -17,12 +17,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @CrossOrigin
 @RestController
 public class MotorcycleController {
 
     private Map<Integer, Motorcycles> motorcycles = new HashMap<>();
-
+    private static final Logger logger = LoggerFactory.getLogger(MotorcycleController.class);
     
 
     @EventListener(ApplicationReadyEvent.class)
@@ -33,8 +36,8 @@ public class MotorcycleController {
         this.motorcycles.put(3,new Motorcycles(3, "Enduro", motorcycle_type));
         this.motorcycles.put(4,new Motorcycles(4, "Sport", motorcycle_type));
         this.motorcycles.put(5,new Motorcycles(5, "Tourer", motorcycle_type));
-        System.out.println("Init Data");
-    }
+        logger.info("Init Data");
+        }
 
     @GetMapping("/services/motorcycle")
     public List<PathListEntry<Integer>> motorcycle() {
