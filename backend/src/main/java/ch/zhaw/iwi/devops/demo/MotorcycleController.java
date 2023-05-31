@@ -76,6 +76,4 @@ public class MotorcycleController {
         return this.motorcycles.remove(id);
     }
 
-    public void createMotorcycle(int i, String string, String string2) {
-    }
 }
