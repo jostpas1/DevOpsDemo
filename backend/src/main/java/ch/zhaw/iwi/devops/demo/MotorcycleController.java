@@ -72,4 +72,7 @@ public class MotorcycleController {
     public Motorcycles deleteMotorcycle(@PathVariable Integer id) {
         return this.motorcycles.remove(id);
     }
+
+    public void createMotorcycle(int i, String string, String string2) {
+    }
 }
