@@ -14,7 +14,7 @@ class MotorcyclesTest {
     }
 
     @Test
-    void testEmptyBeer() {
+    void testEmptyMotorcyle() {
         var motorcycle = new Motorcycles();
         motorcycle.setId(69);
         assertEquals(null, motorcycle.getTitle());
