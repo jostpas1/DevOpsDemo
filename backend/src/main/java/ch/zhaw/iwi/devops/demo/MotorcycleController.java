@@ -71,7 +71,7 @@ public class MotorcycleController {
         this.motorcycles.put(id, motorcycle);
     }
 
-    @DeleteMapping("/services/motorcycle/{key}")
+    @DeleteMapping("/services/motorcycle/{id}")
     public Motorcycles deleteMotorcycle(@PathVariable Integer id) {
         return this.motorcycles.remove(id);
     }
