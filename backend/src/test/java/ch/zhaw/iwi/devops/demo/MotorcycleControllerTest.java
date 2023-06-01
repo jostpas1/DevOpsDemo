@@ -11,4 +11,16 @@ public class MotorcycleControllerTest {
         controller.createMotorcycle(newMotorcycle);
         assertEquals(1, controller.motorcycle().size());
     }
+
+    @Test
+    public void testGetMotorcycle() {
+        MotorcycleController controller = new MotorcycleController();
+        Motorcycles newMotorcycle = new Motorcycles(1, "Test Motorcycle", "Test Type");
+        controller.createMotorcycle(newMotorcycle);
+
+        Motorcycles fetchedMotorcycle = controller.getMotorcycle(1);
+        assertEquals(newMotorcycle.getTitle(), fetchedMotorcycle.getTitle());
+    }
+
+
 }
