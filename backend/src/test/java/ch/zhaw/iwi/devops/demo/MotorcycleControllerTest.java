@@ -1,6 +1,8 @@
 package ch.zhaw.iwi.devops.demo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MotorcycleControllerTest {
 
@@ -22,5 +24,22 @@ public class MotorcycleControllerTest {
         assertEquals(newMotorcycle.getTitle(), fetchedMotorcycle.getTitle());
     }
 
-
+    @Test
+    public void testDeleteMotorcycle() {
+        MotorcycleController controller = new MotorcycleController();
+    
+        // Erstellen eines Motorrad und hinzufügen
+        Motorcycles newMotorcycle = new Motorcycles(1, "Test Motorcycle", "Test Type");
+        controller.createMotorcycle(newMotorcycle);
+    
+        // Sicherstellen, dass das Motorrad existiert
+        assertNotNull(controller.getMotorcycle(1));
+    
+        // Löschen des Motorrads
+        controller.deleteMotorcycle(1);
+    
+        // Sicherstellen, dass das Motorrad gelöscht wurde
+        assertNull(controller.getMotorcycle(1));
+    }
+    
 }
