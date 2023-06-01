@@ -1,11 +1,11 @@
 plugins {
-	id 'java'
-    id 'application'	
-	id 'org.springframework.boot' version '2.7.6'
-	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-	id 'jacoco'
+    id 'java'
+    id 'application'   
+    id 'org.springframework.boot' version '2.7.6'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'jacoco'
     id "org.sonarqube" version "3.5.0.2730"
-  }
+}
 
 group = 'ch.zhaw.iwi.devops'
 version = '0.0.1-SNAPSHOT'
@@ -17,18 +17,18 @@ java {
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // Hier entfernen wir die slf4j-simple-Abhängigkeit
     implementation 'org.slf4j:slf4j-api:1.7.30'
-    runtimeOnly 'org.slf4j:slf4j-simple:1.7.30'	
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 test {
@@ -36,9 +36,9 @@ test {
 }
 
 jacocoTestReport {
-	reports {
-		xml.enabled true
-		csv.enabled false
-		xml.destination file("${rootProject.projectDir}/target/site/jacoco/cov.xml")
-	}
+    reports {
+        xml.enabled true
+        csv.enabled false
+        xml.destination file("${rootProject.projectDir}/target/site/jacoco/cov.xml")
+    }
 }
