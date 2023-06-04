@@ -122,6 +122,76 @@ export class GuiModel {
                     }
                 ]
             },
+            {
+                "id": "CarForm",
+                "title": { default: "Auto" },
+                "url": "/car",
+                "formFieldList": [
+                    {
+                        "id": "title",
+                        "type": "text",
+                        "name": { default: "Titel" },
+                        "required": true,
+                        "width": 2
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "name": { default: "Text" },
+                        "newRow": true,
+                        "maxLength": 4000,
+                        "height": 4,
+                        "width": 2
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            },         
+            {
+                "id": "CycleForm",
+                "title": { default: "Velo" },
+                "url": "/cycle",
+                "formFieldList": [
+                    {
+                        "id": "title",
+                        "type": "text",
+                        "name": { default: "Titel" },
+                        "required": true,
+                        "width": 2
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "name": { default: "Text" },
+                        "newRow": true,
+                        "maxLength": 4000,
+                        "height": 4,
+                        "width": 2
+                    },
+                    {
+                        "type": "deleteButton",
+                        "name": "Delete"
+                    },
+                    {
+                        "type": "cancelButton",
+                        "name": "Cancel"
+                    },
+                    {
+                        "type": "okButton",
+                        "name": "Ok"
+                    }
+                ]
+            },               
         ],            
             "pageList": [
                 {
@@ -141,6 +211,22 @@ export class GuiModel {
                             "page": "motorcyclePage",
                             "width": 2,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Auto" },
+                            "icon": "fa-car",
+                            "color": "yellow",
+                            "page": "CarPage",
+                            "width": 2,
+                        },
+                        {
+                            "type": "button",
+                            "name": { default: "Velo" },
+                            "icon": "fa-cycle",
+                            "color": "green",
+                            "page": "CyclePage",
+                            "width": 2,
+                        },                                                
                     ]
                 },
                 {
